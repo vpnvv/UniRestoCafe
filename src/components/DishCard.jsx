@@ -11,54 +11,54 @@ const DishCard = ({ dish }) => {
 
   const handleAdd = () => dispatch(addToCart({ dishId: dish.dish_id }));
   const handleRemove = () => dispatch(removeFromCart({ dishId: dish.dish_id }));
-  
+
   return (
-<div className="flex items-center justify-between p-4 border-b">
-  <div 
-    style={{ maxWidth: '200px' }} 
-    className="sm:max-w-none" 
-  > 
-    <h2 className="text-lg font-semibold">{dish?.dish_name}</h2>
-    <p className="text-sm text-black-500">{dish?.dish_currency}{" "}{dish?.dish_price}</p>
-    <p 
-      className="text-sm text-gray-500 " 
-      
-    > 
-      {dish?.dish_description} 
-    </p> 
-    {
-      dish?.dish_Availability ?
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={handleRemove}
-            className="px-2 py-1 bg-green-500 text-white rounded"
-          >
-            -
-          </button>
-          <span className="bg-green-500 text-white px-2 py-1 rounded">{count}</span>
-          <button
-            onClick={handleAdd}
-            className="px-2 py-1 bg-green-500 text-white rounded"
-          >
-            +
-          </button>
-        </div>
-        :
-        <div className="flex items-center space-x-2">
-          <p className="text-xs text-red-500">Not Available</p>
-        </div>
-    }
-  </div>
-  <div className="flex items-center ml-auto"> 
-    <p className="mr-2 text-sm ">{dish?.dish_calories} Calories</p> 
-    <LazyLoadImage
-      alt={`${dish?.dish_name}_image`}
-      src={dish?.dish_image}
-      effect="opacity"
-      className='w-16 h-16 object-cover rounded'
-    />
-  </div>
-</div>
+    <div className="flex items-center justify-between p-4 border-b">
+      <div
+        style={{ maxWidth: '200px' }}
+        className="sm:max-w-none"
+      >
+        <h2 className="text-lg font-semibold">{dish?.dish_name}</h2>
+        <p className="text-sm text-black-500">{dish?.dish_currency}{" "}{dish?.dish_price}</p>
+        <p
+          className="text-sm text-gray-500 "
+
+        >
+          {dish?.dish_description}
+        </p>
+        {
+          dish?.dish_Availability ?
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={handleRemove}
+                className="px-2 py-1 bg-green-500 text-white rounded"
+              >
+                -
+              </button>
+              <span className="bg-green-500 text-white px-2 py-1 rounded">{count}</span>
+              <button
+                onClick={handleAdd}
+                className="px-2 py-1 bg-green-500 text-white rounded"
+              >
+                +
+              </button>
+            </div>
+            :
+            <div className="flex items-center space-x-2">
+              <p className="text-xs text-red-500">Not Available</p>
+            </div>
+        }
+      </div>
+      <div className="flex items-center ml-auto">
+        <p className="mr-2 text-sm ">{dish?.dish_calories} Calories</p>
+        <LazyLoadImage
+          alt={`${dish?.dish_name}_image`}
+          src={dish?.dish_image}
+          effect="opacity"
+          className='w-16 h-16 object-cover rounded'
+        />
+      </div>
+    </div>
 
 
   );
