@@ -9,10 +9,10 @@ const CartIcon = () => {
 
   return (
     <div className="flex items-center space-x-4">
-      {/* MY ORDERS Text */}
+    
       <span className="hidden sm:block">My Orders</span>
 
-      {/* Cart icon with badge */}
+
       <div className="relative">
         <FaShoppingCart className="text-gray-500 text-2xl" />
 
